@@ -53,6 +53,9 @@ Run the following commands in the project's root directory to set up the machine
 python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
 ```   
 After running this, you will have a pickle file called "classifier.pkl" in your model folder.
+![](https://github.com/ZhaoyiW/Web-App-Disaster-Messages-Classifier/blob/main/Screenshots/model/model_metrics.png)   
+:deciduous_tree:    The multi-output classifier is based on Random Forest and has an average accuracy of around **0.9493**. The precision is 0.9417, the recall is 0.9493.
+
 
 ### Run the App Locally
 Run the following command in the app's directory to run your web app.   
