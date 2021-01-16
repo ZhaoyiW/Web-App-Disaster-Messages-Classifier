@@ -33,12 +33,12 @@ def load_data(database_filepath):
     '''
     # Load dataset
     engine = create_engine('sqlite:///{}'.format(database_filepath))
-    df = pd.read_sql_table('Response', con=engine).iloc[:1000]
+    df = pd.read_sql_table('Response', con=engine)
     # Define feature and target variables
     X = df.message.values
-    Y = df[df.columns.difference(['id', 'message', 'original', 'genre'])].values
+    Y = df[df.columns[4:]].values
     # Create a list of category names
-    category_names = df.columns.difference(['id', 'message', 'original', 'genre'])
+    category_names = df.columns[4:]
     
     return X, Y, category_names
 
