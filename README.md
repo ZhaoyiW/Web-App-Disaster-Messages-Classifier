@@ -14,6 +14,8 @@ Type in your disaster report message and get the categories immediately.
   * [NLP and Machine Learning Pipeline](#nlp-and-machine-learning-pipeline)
   * [Run the App Locally](#run-the-app-locally)
 - [Web App Overview](#web-app-overview)
+  * [The Interface](#the-interface)
+  * [How to use it?](#how-to-use-it)
 - [File Description](#file-description)
 
 ## Project Overview
@@ -65,7 +67,18 @@ python run.py
 Then go to http://0.0.0.0:3001/ :arrow_lower_left:
 
 ## Web App Overview
+### The Interface
+![](https://github.com/ZhaoyiW/Web-App-Disaster-Messages-Classifier/blob/main/Screenshots/app/Web-app-interface.png)
+There's an input box for you to type in disaster-related messages on the main page.   
+It also shows an overview of the training dataset. From the charts here, we can see that most messages are direct messages or news. Only less than 10% are from social media.   
 
+![](https://github.com/ZhaoyiW/Web-App-Disaster-Messages-Classifier/blob/main/Screenshots/app/training-set-distribution.png)
+From the categories' distribution, we can see that 76.9% of the messages are tagged as "related," which is a general category that doesn't provide much information.   
+Besides, many messages are marked as "aid related," "weather-related," and "direct report," meaning the classifier will perform more accurately when classifying messages related. However, **there are no records about "child alone."** So if you type in a message reporting a child being alone, the model cannot classify it since it never learned about it.
+### How to use it?
+Type in the message to report a disaster problem and click "Classify Message." The app will lead you to a page like this:
+![](https://github.com/ZhaoyiW/Web-App-Disaster-Messages-Classifier/blob/main/Screenshots/app/classifier.png)
+If the model classifies your message into some categories, the categories will be highlighted in the "Result" part.
 ## File Description
 - app
   - template
