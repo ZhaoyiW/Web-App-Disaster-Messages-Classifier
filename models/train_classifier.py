@@ -89,8 +89,14 @@ def build_model():
     ])
 
     # specify parameters for grid search
+    parameters = {
+    'vect__ngram_range': ((1, 1), (1, 2)),
+    'vect__max_features': (None, 5000, 10000)
+    }
+    
+    cv = GridSearchCV(pipeline, param_grid=parameters, verbose=10)
 
-    return pipeline
+    return cv
 
 
 def highlight_mean(s):
